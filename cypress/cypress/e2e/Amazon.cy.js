@@ -43,13 +43,18 @@ describe('All login test', () =>{
     })
 
 
-    it('search bar',() => {
+    it.only('search bar',() => {
 
         cy.get('#twotabsearchtextbox').type('apple mac')
         cy.get('[role="button"]').contains("apple macbook pro").click()
         cy.title().should('include','apple macbook pro')
         cy.get('.s-search-results .a-link-normal')
-       // cy.get('[target="_blank"]').contains("Apple 2023 MacBook Air laptop with M2 chip").click()
+        cy.get('[target="_blank"]').contains("Apple MacBook Air Laptop M1 chip").click()
+        cy.get('.s-result-item [data-cy="title-recipe"]').each(($product) => {         
+            cy.wrap($product).invoke('text').then((text) => {           
+                cy.log('Product Name: ' + text)
+            })
+        })
    
 
     })
