@@ -7,7 +7,7 @@ describe('All login test', () =>{
     
     })
 
-    it.skip('Phone Data',() =>{ 
+    it.only('Phone Data',() =>{ 
 
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()
@@ -43,7 +43,7 @@ describe('All login test', () =>{
     })
 
 
-    it.skip('search bar',() => {
+    it('search bar',() => {
 
         cy.get('#twotabsearchtextbox').type('apple mac')
         cy.get('[role="button"]').contains("apple macbook pro").click()
