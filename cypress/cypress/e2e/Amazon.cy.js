@@ -7,7 +7,7 @@ describe('All login test', () =>{
     
     })
 
-    it('Phone Data',() =>{ 
+    it.skip('Phone Data',() =>{ 
 
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()
@@ -43,7 +43,7 @@ describe('All login test', () =>{
     })
 
 
-    it.only('search bar',() => {
+    it.skip('search bar',() => {
 
         cy.get('#twotabsearchtextbox').type('apple mac')
         cy.get('[role="button"]').contains("apple macbook pro").click()
@@ -60,7 +60,7 @@ describe('All login test', () =>{
     })
 
 
-    it.skip('Product opening', () => {
+    it('Product opening', () => {
 
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()
