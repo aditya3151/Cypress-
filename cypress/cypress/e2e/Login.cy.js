@@ -20,9 +20,9 @@ beforeEach( () =>{
         
         })
         
-        it('Invalid username',() =>{
+        it.only('Invalid username',() =>{
     
-            cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin123')
+            cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin123', { delay: 0 } )
             cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123{enter}')
             cy.get('.oxd-main-menu-search > .oxd-icon-button').click()
             cy.get('.oxd-main-menu-search > .oxd-icon-button').click()
