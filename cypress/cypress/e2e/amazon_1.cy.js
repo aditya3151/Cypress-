@@ -75,10 +75,10 @@ describe('All login test', function() {
         cy.get('.s-result-item [data-cy="title-recipe"]').contains(this.data.product_mobile).invoke('removeAttr','target')
         .click()
         cy.get('#title').should("have.text" , this.data.mobile_title)
-        cy.get('Input[type="button"]').click({force:true})
-        cy.get('#attach-close_sideSheet-link').wait(1000).click()
+        cy.get('Input[type="button"]').click({force:true}).wait(500)
+        cy.get('#attach-close_sideSheet-link').wait(4000).click()
         cy.get('#nav-cart').wait(200).click()
-        cy.get('.a-truncate-cut').should('contain','Apple iPhone 15 (128 GB) - Black')
+        cy.get('.a-truncate-cut').should('contain',this.data.cart)
 
 
     })
