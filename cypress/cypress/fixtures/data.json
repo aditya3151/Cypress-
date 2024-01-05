@@ -1,6 +1,13 @@
 {
-    "userRole": ["Admin", "ESS"],
-    "status": ["Enabled", "Disabled"]
+    "catageroy": "Mobiles, Computers",
+    "mobiles"  : "All Mobile Phones",
+    "brand"    : "Apple",
+    "search"   : "apple mac",
+    "product"  : "apple macbook pro",
+    "product_name" :"MacBook Air Laptop M1 chip",
+    "product_mobile" :"iPhone 15 (128 GB) - Black",
+    "mobile_title" : "         Apple iPhone 15 (128 GB) - Black              ",
+    "button" : "Add to Cart"
 
 
 

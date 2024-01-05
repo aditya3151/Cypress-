@@ -22,6 +22,7 @@ it('Paytm', ()=> {
       //cy.get('table.calendar').eq(1)
       cy.get('table.calendar tbody:nth-child(2)').eq(0)
       .find('.calendar__day').contains('10').click()
+      cy.get('#flightSearch').click()
       
        //for logging the dates
        //.find('tr td .calendar__day')
