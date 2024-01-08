@@ -1,6 +1,6 @@
 /// <reference types ="cypress"/>
 
-describe('All login test', function() {
+describe('Amazon', function() {
 
     beforeEach( function () {
         
