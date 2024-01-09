@@ -62,7 +62,7 @@ describe('Amazon', function () {
 
     })
 
-    it.only('child window ', function () {
+    it('child window ', function () {
         cy.visit('https://www.amazon.in/')
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(200).contains(this.data.catageroy).click()
