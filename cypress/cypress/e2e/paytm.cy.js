@@ -12,8 +12,7 @@ describe('Date picker', function() {
     })
 
 it('Paytm', function () {
-    cy.visit('https://tickets.paytm.com/flights/')
-    
+   cy.visit('https://tickets.paytm.com/flights/')
     //To select from
     cy.get('#srcCode').click()
     cy.get('._3i2Wp').click()
@@ -35,6 +34,7 @@ it('Paytm', function () {
       cy.get('#flightSearch').click()
       cy.wait(500)
       cy.get('#flightsList [class="M9kpV"]').contains(this.data.flight_name)
+      cy.wait(500)
       cy.get('#b779e38c4c70aabe1733e35d493ccf40 > ._1gMv6 > ._5Cbbf > ._1Ply7 > .zHp8j > ._1zafZ > :nth-child(1)').click()
       cy.get(':nth-child(2) > ._3_gN0 > ._3bvz6 > ._33sPg').invoke('removeAttr','target').click()
   
