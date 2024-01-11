@@ -35,7 +35,7 @@ describe('Amazon', function () {
         //For product price
         cy.get('.s-result-item .a-price .a-price-whole').each(($price) => {
             cy.wrap($price).invoke('text').then((text) => {
-                cy.log('Product Price: $' + text)
+            cy.log('Product Price: $' + text)
             })
         })
         //For product delivery time    

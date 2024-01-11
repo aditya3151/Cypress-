@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@cypress/browserify-preprocessor": "latest",
     "cypress-downloadfile": "^1.2.3"
   },
   "description": "",

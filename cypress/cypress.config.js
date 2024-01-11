@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
 
+
 module.exports = defineConfig({
 
   //cypress cloud project ID
@@ -13,6 +14,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000,
 
     
+
     setupNodeEvents(on, config) {
 
       //for download
