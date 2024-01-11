@@ -9,7 +9,7 @@ module.exports = defineConfig({
   
   e2e: {
     
-    "retries": 1,
+    "retries": 0,
     watchForFilechange: false,
     defaultCommandTimeout: 10000,
 
