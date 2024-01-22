@@ -14,11 +14,15 @@ describe('Amazon', function () {
     it('Phone Data using fixtures', function () {
 
         cy.visit('https://www.amazon.in/')
-        cy.get('#nav-hamburger-menu').click()
-        cy.get('#hmenu-content').wait(500).contains(this.data.catageroy).click()
-        ///cy.get('.hmenu-visible > :nth-child(15) > .hmenu-item > .nav-sprite').click()
-        //cy.contains('All Mobile Phones').wait(500).click()
-        cy.get('.hmenu-item').contains(this.data.mobiles).click({ force: true })
+        //cy.get('#nav-hamburger-menu').click()
+        //cy.get('#hmenu-content').contains(this.data.catageroy).click({ force: true })
+       // cy.get('.hmenu-item').contains(this.data.mobiles).click({ force: true })
+
+        cy.get('.hm-icon-label').click()
+        cy.get('[class="hmenu-item"]').contains(this.data.catageroy).click()
+        cy.get('[class="hmenu-item hmenu-title "]')
+        cy.get('[class="hmenu-item"]').contains(this.data.mobiles).click({force:true})
+
         cy.get(':nth-child(3) > .a-unordered-list > .a-spacing-micro > .a-list-item > .a-link-normal > .a-checkbox > label > .a-icon').click()
         cy.get('#brandsRefinements').wait(500).contains(this.data.brand).click()
 
@@ -64,11 +68,11 @@ describe('Amazon', function () {
 
     it('child window ', function () {
         cy.visit('https://www.amazon.in/')
-        cy.get('#nav-hamburger-menu').click()
-        cy.get('#hmenu-content').wait(200).contains(this.data.catageroy).click()
-        ///cy.get('.hmenu-visible > :nth-child(15) > .hmenu-item > .nav-sprite').click()
-        //cy.contains('All Mobile Phones').wait(500).click()
-        cy.get('.hmenu-item').contains(this.data.mobiles).click({ force: true })
+        cy.get('.hm-icon-label').click()
+        cy.get('[class="hmenu-item"]').contains(this.data.catageroy).click()
+        cy.get('[class="hmenu-item hmenu-title "]')
+        cy.get('[class="hmenu-item"]').contains(this.data.mobiles).click({force:true})
+        ///
         cy.get(':nth-child(3) > .a-unordered-list > .a-spacing-micro > .a-list-item > .a-link-normal > .a-checkbox > label > .a-icon').click()
         cy.get('#brandsRefinements').wait(500).contains(this.data.brand).click()
         cy.get('.s-result-item [data-cy="title-recipe"]').contains(this.data.product_mobile).invoke('removeAttr', 'target')
