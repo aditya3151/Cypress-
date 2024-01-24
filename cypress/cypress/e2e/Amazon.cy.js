@@ -7,7 +7,7 @@ describe('All login test', () =>{
     
     })
 
-    it.only('Phone Data',() =>{ 
+    it('Phone Data',() =>{ 
 
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()
@@ -60,7 +60,7 @@ describe('All login test', () =>{
     })
 
 
-    it('Product opening', () => {
+    it.only('Product opening', () => {
 
         cy.get('#nav-hamburger-menu').click()
         cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()

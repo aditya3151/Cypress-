@@ -5,10 +5,12 @@
     "search"   : "apple mac",
     "product"  : "apple macbook pro",
     "product_name" :"2022 MacBook Air Laptop with M2 chip",
-    "product_mobile" :"iPhone 13 (128GB) - Midnight",
-    "mobile_title" : "        Apple iPhone 13 (128GB) - Midnight       ",
+    "product_mobile" :"iPhone 15 (128GB) - Midnight",
+    "mobile_title" : "        Apple iPhone 15 (128GB) - Midnight       ",
     "button" : "Add to Cart",
-    "cart"   : "Apple iPhone 13 (128GB) - Midnight"
+    "cart"   : "Apple iPhone 15 (128GB) - Midnight",
+    "num"    : "9962885835",
+    "pass"   : "Areddy@310"
 
 
 
