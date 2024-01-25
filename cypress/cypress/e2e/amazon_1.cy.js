@@ -69,7 +69,7 @@ describe('Amazon',  () =>{
 
     })
 
-    it.only('child window ', function () {
+    it('child window ', function () {
         cy.visit('https://www.amazon.in/')
         //cy.get('[class="hmenu-item hmenu-title "]').contains('Shop by Category')
        // cy.get('[data-ref-tag="nav_em_1_1_1_14"]',{timeout:100}).contains(this.data.catageroy).click({force:true})
@@ -84,7 +84,7 @@ describe('Amazon',  () =>{
         cy.get('#attach-close_sideSheet-link').wait(4000).click()
         cy.get('#nav-cart').wait(200).click()
         cy.get('.a-truncate-cut').should('contain', this.data.cart)
-
+     
 
     })
 })
