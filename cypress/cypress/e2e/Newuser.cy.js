@@ -31,10 +31,6 @@ describe('All login test', () =>{
             cy.get('.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input').type('Qwerty@123')
             cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Qwerty@123')
             cy.get('.oxd-button--secondary').should('be.visible').click()
-            })
-
-            
-
-            
+            })    
         })
 

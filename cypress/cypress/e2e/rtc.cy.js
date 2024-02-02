@@ -2,11 +2,7 @@
 
 describe('date picker', () => {
 
-
-
-
     it('date', () => {
-
         cy.visit("https://www.apsrtconline.in/oprs-web/guest/home.do?h=1")
         cy.get('#fromPlaceName').type('hyderabad{downarrow}')
         cy.get('#txtJourneyDate').click()
