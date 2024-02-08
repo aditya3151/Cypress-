@@ -29,7 +29,7 @@ describe('HTTP req', () => {
             method: "PUT",
             url: "http://localhost:3000/students/c44f",
             body: {
-                name: "for put",
+                name: "SA",
                 location: "for put",
                 phone: "for put",
                 courses: [
