@@ -21,6 +21,7 @@ let authToken=null
             expect(Response.status).to.eq(200)
             authToken=Response.body.token;
             cy.log(authToken)
+            cy.log(Response)
         })
     })
 
