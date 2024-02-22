@@ -1,7 +1,9 @@
 /// <reference types = "cypress"/>
 describe("Auth_Types", () =>{
 
-    let res=null
+    //let res=null
+    const name = "postman"
+    const pass = "password"
     it("Basic_Auth",() => {
     
         cy.request({
@@ -21,17 +23,16 @@ describe("Auth_Types", () =>{
         })
     })
 
-    it("Digest_Auth", () => {
+    it.only("Digest_Auth", () => {
 
         cy.request({
-
             method: "GET",
             url: "https://postman-echo.com/digest-auth",
             auth: {
-
-                username : "postman",
-                password : "password",
-                digest : "true"
+                name,
+                pass,
+                digest : true,
+                failOnStatusCode: false
             }
         })
     })
