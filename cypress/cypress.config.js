@@ -11,16 +11,9 @@ module.exports = defineConfig({
     
     "retries": 0,
     watchForFilechange: false,
-    defaultCommandTimeout: 10000,
-
-    
-
-    setupNodeEvents(on, config) {
-
-      //for download
-      on('task', {downloadFile})
-      // implement node event listeners here
-      
+    defaultCommandTimeout: 20000,
+    setupNodeEvents(on, config) {    /// to configure download files
+      on('task', {downloadFile})  
     },
   },
 });
