@@ -12,20 +12,6 @@ describe("Flipkart", () => {
         cy.get('[title="No Cost EMI"] > ._1Y4Vhm > ._2iDkf8 > ._24_Dny').click()
         cy.get(':nth-child(5) > ._213eRC > ._2gmUFU').click()
         cy.get('[title="8 Seater"] > ._1Y4Vhm > ._2iDkf8 > ._30VH1S').check({ force: true })
-        
-        // cy.get('div[class="_1YokD2 _3Mn1Gg"]')
-        //         .then($products => {
-        //           const productDetails = Array.from($products).map(product => {
-        //             const price = parseFloat(cy.wrap(product).find('._8VNy32 > ._25b18c > ._30jeq3').text().replace(/[₹,]/g, ''));
-        //             const name = cy.wrap(product).find('.s1Q9rs').text();
-        //             return { price, name };
-        //              });
-
-        //           // Compare the prices and print the product names
-        //           const lowPriceProducts = productDetails.filter(product => product.price <= 100);
-        //           lowPriceProducts.forEach(product => console.log(product.name));
-        //         })
-
         //-----working to print the values--------//
         cy.get('div[class="_1YokD2 _3Mn1Gg"]').then(($details) => {
             const details = $details.text()
