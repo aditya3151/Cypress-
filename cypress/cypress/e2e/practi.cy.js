@@ -2,32 +2,10 @@ describe("Flipkart", () => {
 
     let title = null;
     let price = null
-    it("Furniture", () => {
+    const url= 'https://docs.cypress.io/api/commands/task#:~:text=Examples%E2%80%8B-,cy.,of%20the%20scope%20of%20Cypress.'
+    let syn = null;
 
-        cy.visit("https://www.flipkart.com/")
-        cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
-        cy.contains('Living Room Furniture').trigger('mouseover')
-        cy.contains('Dining Sets').click()
-       // cy.get('._1YAKP4 > ._2YxCDZ').select('10000')
-       // cy.get('._3uDYxP > ._2YxCDZ').select('30000')
-        cy.contains('Seating Capacity').click()
-        cy.contains('8 Seater').click()
-        cy.get('[title="No Cost EMI"]').click()
-        //-----working to print the values--------//
-        cy.get('div[class="_1YokD2 _3Mn1Gg"]').then(($details) => {
-            const details = $details.text()
-            cy.log(details)
-            cy.get('._8VNy32 > ._25b18c > ._30jeq3').each(($el, index, $list) => {
-                const priceString = $el.text()
-                const price = parseFloat(priceString.replace(/[₹,]/g, '') )       
-                if( price> 20000){
-                    cy.log('Final list:' +price)              
-    }      
-            }) 
-        })
-    })
-
-    it.only("locators", ()=> {
+    it("locators", ()=> {
         cy.visit("https://www.flipkart.com/")
         cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
         cy.contains('Living Room Furniture').trigger('mouseover')
@@ -43,6 +21,44 @@ describe("Flipkart", () => {
                 console.log(infoprice); // Log the name of items with price > 20000
                 cy.log(infoname,infoprice)
             }
+        }) 
+        
+    })
+
+    it.only("locators_2", () => {
+        cy.visit(url)
+        cy.get('body').trigger('keydown', { keyCode: 27})
+        cy.get('[data-cy]')
+        cy.get(':nth-child(4) > .flex').each(($sort) => {
+            let sort =$sort.text()
+            cy.log(sort)
+        })
+        cy.get(':nth-child(4) > .transition-all > .overflow-hidden > :nth-child(4) > .group').click({force:true})
+        cy.get(':nth-child(5) > .codeBlockContent_biex > .prism-code > .codeBlockLines_e6Vv').each(($sort_syntax)=> {
+            let sort_syntax = $sort_syntax.text()
+            cy.log(sort_syntax)
+        })
+        cy.get(':nth-child(5) > .codeBlockContent_biex > .prism-code > .codeBlockLines_e6Vv').each(($sort_syntax1)=> {
+            let sort_syntax1 = $sort_syntax1.text()
+            cy.log(sort_syntax1)
+        })
+        cy.get(':nth-child(4) > .transition-all > .overflow-hidden > :nth-child(4) > .group').click()
+        cy.get(':nth-child(5) > .codeBlockContent_biex > .prism-code > .codeBlockLines_e6Vv').each(($sort_syn) => {
+
+            let sort_syn = $sort_syn.text()
+            cy.log(sort_syn)
+        })
+        
+        cy.get('.theme-doc-markdown > :nth-child(7)').should('be.visible')
+        cy.get(':nth-child(57) > a').should('be.visible').click()
+        cy.get('.fixed > .border').click()
+        cy.log('#Actionability')
+        cy.get(':nth-child(10) > :nth-child(1) > a').each(($syn)=>{
+             syn = $syn.text()
+            if(syn === 'Scroll the element into view.'){
+                cy.log(syn)
+            }
+
         })
     })
 })
