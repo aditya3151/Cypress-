@@ -1,7 +1,8 @@
-describe("Flipkart", () => {
+describe("Cypress", () => {
 
     const url= 'https://docs.cypress.io/api/commands/task#:~:text=Examples%E2%80%8B-,cy.,of%20the%20scope%20of%20Cypress.'
     let syn = null;
+    
 
     it("locators", ()=> {
         cy.visit("https://www.flipkart.com/")
@@ -21,7 +22,7 @@ describe("Flipkart", () => {
             }
         }) 
     })
-    it.only("locators_2", () => {
+    it("locators_2", () => {
         cy.visit(url)
         cy.get('body').trigger('keydown', { keyCode: 27})
         cy.get('[data-cy]')
@@ -58,7 +59,88 @@ describe("Flipkart", () => {
         cy.go('back')
         cy.get(':nth-child(2) > .flex').click()
         cy.get('[href="/api/commands/as"]').should('be.visible').click()
+        cy.wait(30000)
          })
 
-         
+         it("locators3", ()=> {
+            cy.visit("https://www.flipkart.com/")
+            cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
+            cy.contains('Living Room Furniture').trigger('mouseover')
+            cy.contains('Dining Sets').click()
+            cy.contains('Seating Capacity').click()
+            cy.contains('8 Seater').click()
+            //cy.get('[title="No Cost EMI"]').click()
+            cy.get('[data-id]').each($info => {
+                const infoprice = parseFloat($info.find('div[class="_30jeq3"]').text().replace(/[₹,]/g, ''));
+                const infoname = $info.find('[title]').text();
+                // Filter items with price greater than 20000
+                if (infoprice > 20000) {
+                    console.log(infoprice); // Log the name of items with price > 20000
+                    cy.log(infoname,infoprice)
+                }
+                
+            }) 
+            cy.wait(30000)
+        })
+        it("locators6", ()=> {
+            cy.visit("https://www.flipkart.com/")
+            cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
+            cy.contains('Living Room Furniture').trigger('mouseover')
+            cy.contains('Dining Sets').click()
+            cy.contains('Seating Capacity').click()
+            cy.contains('8 Seater').click()
+            //cy.get('[title="No Cost EMI"]').click()
+            cy.get('[data-id]').each($info => {
+                const infoprice = parseFloat($info.find('div[class="_30jeq3"]').text().replace(/[₹,]/g, ''));
+                const infoname = $info.find('[title]').text();
+                // Filter items with price greater than 20000
+                if (infoprice > 20000) {
+                    console.log(infoprice); // Log the name of items with price > 20000
+                    cy.log(infoname,infoprice)
+                }
+                
+            }) 
+            cy.wait(30000)
+        })
+
+        it("locators8", ()=> {
+            cy.visit("https://www.flipkart.com/")
+            cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
+            cy.contains('Living Room Furniture').trigger('mouseover')
+            cy.contains('Dining Sets').click()
+            cy.contains('Seating Capacity').click()
+            cy.contains('8 Seater').click()
+            //cy.get('[title="No Cost EMI"]').click()
+            cy.get('[data-id]').each($info => {
+                const infoprice = parseFloat($info.find('div[class="_30jeq3"]').text().replace(/[₹,]/g, ''));
+                const infoname = $info.find('[title]').text();
+                // Filter items with price greater than 20000
+                if (infoprice > 20000) {
+                    console.log(infoprice); // Log the name of items with price > 20000
+                    cy.log(infoname,infoprice)
+                }
+            }) 
+            cy.wait(30000)
+        })
+
+it("locators10", ()=> {
+            cy.visit("https://www.flipkart.com/")
+            cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
+            cy.contains('Living Room Furniture').trigger('mouseover')
+            cy.contains('Dining Sets').click()
+            cy.contains('Seating Capacity').click()
+            cy.contains('8 Seater').click()
+            //cy.get('[title="No Cost EMI"]').click()
+            cy.get('[data-id]').each($info => {
+                const infoprice = parseFloat($info.find('div[class="_30jeq3"]').text().replace(/[₹,]/g, ''));
+                const infoname = $info.find('[title]').text();
+                // Filter items with price greater than 20000
+                if (infoprice > 20000) {
+                    console.log(infoprice); // Log the name of items with price > 20000
+                    cy.log(infoname,infoprice)
+                }
+            }) 
+            cy.wait(30000)
+        })
+        
 })

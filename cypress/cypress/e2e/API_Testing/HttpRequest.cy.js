@@ -1,6 +1,10 @@
 /// <reference types ="cypress"/>
 describe('HTTP req', () => {
 
+
+    const res = null
+    const site = "http://localhost:3000/students/"
+
     it("Get", () => {
         cy.request('GET', 'http://localhost:3000/students')
             .its('status').should('equal', 200)
@@ -36,14 +40,16 @@ describe('HTTP req', () => {
                     "for put"
                 ]
             }
-        })
-            .its('status').should('equal', 200)
+        }).then((Response)=> {
+                 res = Response.body.id
+                cy.log(res)
+            })
     })
 
     it("Del", () => {
         cy.request({
             method: "DELETE",
-            url: "http://localhost:3000/students/9f68"
+            url: site + res 
         }).its('status').should('equal', 200)
     })
 })
