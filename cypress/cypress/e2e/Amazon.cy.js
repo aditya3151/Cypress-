@@ -41,8 +41,7 @@ describe('All login test', () =>{
             })
         })
     })
-
-
+    
     it('search bar',() => {
 
         cy.get('#twotabsearchtextbox').type('apple mac')
@@ -55,15 +54,13 @@ describe('All login test', () =>{
                 cy.log('Product Name: ' + text)
             })
         })
-   
-
     })
 
 
     it.only('Product opening', () => {
 
         cy.get('#nav-hamburger-menu').click()
-        cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click()
+        cy.get('#hmenu-content').wait(500).contains("Mobiles, Computers").click({force:true})
         ///cy.get('.hmenu-visible > :nth-child(15) > .hmenu-item > .nav-sprite').click()
         //cy.contains('All Mobile Phones').wait(500).click()
         cy.get('.hmenu-item').wait(500).contains("All Mobile Phones").click()
@@ -72,9 +69,5 @@ describe('All login test', () =>{
         cy.get('.s-result-item [data-cy="title-recipe"]').contains("Apple iPhone 15 (128 GB) - Black").invoke('removeAttr','target').click()
         cy.get('#title').should("have.text" , "         Apple iPhone 15 (128 GB) - Black              ")
         cy.get('[type="button"]').contains("Add to Cart").click()
-
-
     })
-
-
 })
