@@ -15,7 +15,7 @@ describe('template spec', () => {
     //to fill the form
     cy.get('.oxd-file-div > .oxd-icon-button').attachFile('image.jpg')
     cy.wait(2000)
-    cy.get('.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input').type('demo')
+    cy.get('.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input').type('abcdefghijklmnopqrstuvwxyz')
     cy.get(':nth-child(3) > :nth-child(2) > .oxd-input').type('test')
     cy.get('.oxd-button--secondary')
     cy.wait(1000)
