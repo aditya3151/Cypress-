@@ -59,10 +59,13 @@ describe("Cypress", () => {
         cy.go('back')
         cy.get(':nth-child(2) > .flex').click()
         cy.get('[href="/api/commands/as"]').should('be.visible').click()
-        cy.wait(30000)
+
+        cy.get('a[normalize-space()="scrollIntoView"]')
+
+        
          })
 
-         it.only("locators3", ()=> {
+         it("locators3", ()=> {
             cy.visit("https://www.flipkart.com/")
             cy.get('[aria-label="Home & Furniture"]').trigger('mouseover')
             cy.contains('Living Room Furniture').trigger('mouseover')

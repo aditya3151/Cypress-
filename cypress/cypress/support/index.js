@@ -9,7 +9,7 @@ Cypress.on('uncaught:exception', (err) => {
          };
        },
     });
-   
     // throw the error to fail the test
     throw err;
    });
+   import 'cypress-axe'; ///for axe-accesibility

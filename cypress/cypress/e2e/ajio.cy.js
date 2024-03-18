@@ -1,9 +1,6 @@
 /// <reference types = "Cypress"/>
 describe("Ajio", () => {
 
-
-
-
     it("ajio_locators", ()=> {
 
         cy.visit("https://www.ajio.com/")
@@ -15,12 +12,15 @@ describe("Ajio", () => {
         cy.get('[role="row"]').each( $info => {
              
             const price =parseFloat($info.find('[class="price  "]').text().replace(/[₹,]/g, ''))
-            const item = $info.find('[class="nameCls"]').text()
+            
+           const item = $info.find('[class="nameCls"]').text()
 
        
             if(price > 2000) {
                 cy.log( 'product name :'+item + "\n\n" + 'product price:'+price)
+               
             }
         })
+        
     })
 })
