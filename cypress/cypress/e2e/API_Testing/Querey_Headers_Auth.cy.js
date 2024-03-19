@@ -21,6 +21,7 @@ const queryparam = { page: 2}
             expect(Response.body.data).has.length(6)
             expect(Response.body.data[1]).to.has.property("first_name","Lindsay")
             cy.log(Response.body.data[1].first_name)
+            cy.log(Response.body.data)
 
     })
 
